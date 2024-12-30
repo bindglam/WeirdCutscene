@@ -58,7 +58,6 @@ public class Cutscene {
         }, 0L, 1L);
     }
 
-    // TODO : Optimize
     public static Cutscene loadCutscene(JSONObject cutsceneObj) {
         Cutscene cutscene = new Cutscene(cutsceneObj.getString("name"));
 
@@ -90,7 +89,7 @@ public class Cutscene {
                 }
             }
 
-            Node node = WeirdCutscene.inst().getNodeManager().createNode(nodeObj.getString("type"), animation);
+            Node node = WeirdCutscene.inst().getNodeManager().createNode(nodeObj.getString("type"), animation, nodeObj);
             if(node == null){
                 WeirdCutscene.inst().getLogger().severe(nodeObj.getString("type") + " is not exist!");
                 continue;

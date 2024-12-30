@@ -5,6 +5,7 @@ import com.alibaba.fastjson2.JSONObject
 import com.github.bindglam.weirdcutscene.WeirdCutscene
 import com.github.bindglam.weirdcutscene.cutscene.Cutscene
 import com.github.bindglam.weirdcutscene.cutscene.node.CameraNode
+import com.github.bindglam.weirdcutscene.cutscene.node.EntityNode
 import com.github.bindglam.weirdcutscene.cutscene.node.NodeManager
 import com.github.retrooper.packetevents.PacketEvents
 import dev.jorel.commandapi.CommandAPI
@@ -14,7 +15,6 @@ import dev.jorel.commandapi.CommandPermission
 import dev.jorel.commandapi.arguments.PlayerArgument
 import dev.jorel.commandapi.arguments.TextArgument
 import dev.jorel.commandapi.executors.CommandExecutor
-import io.github.bindglam.weirdcutscene.cutscene.node.NodeManagerImpl
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -26,7 +26,7 @@ import java.io.FileReader
 class WeirdCutsceneImpl : WeirdCutscene() {
     private val cutscenesFolder = File("plugins/WeirdCutscene/cutscenes")
 
-    private val nodeManager = NodeManagerImpl()
+    private val nodeManager = NodeManager()
 
     private val loadedCutscenes = HashMap<String, JSONObject>()
 
@@ -50,6 +50,7 @@ class WeirdCutsceneImpl : WeirdCutscene() {
             cutscenesFolder.mkdirs()
 
         nodeManager.register(CameraNode::class.java)
+        nodeManager.register(EntityNode::class.java)
 
         reload()
     }

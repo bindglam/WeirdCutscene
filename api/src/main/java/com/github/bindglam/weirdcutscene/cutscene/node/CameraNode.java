@@ -1,5 +1,6 @@
 package com.github.bindglam.weirdcutscene.cutscene.node;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.github.bindglam.weirdcutscene.cutscene.animation.Animation;
 import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerCamera;
@@ -16,8 +17,8 @@ import org.bukkit.util.Vector;
 public class CameraNode extends Node {
     private ItemDisplay cameraEntity;
 
-    public CameraNode(Animation animation) {
-        super(animation);
+    public CameraNode(Animation animation, JSONObject jsonObject) {
+        super(animation, jsonObject);
     }
 
     @Override
