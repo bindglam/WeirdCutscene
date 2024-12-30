@@ -10,6 +10,8 @@ public abstract class WeirdCutscene extends JavaPlugin {
 
     public abstract NodeManager getNodeManager();
 
+    public abstract void reload();
+
     public static @NotNull WeirdCutscene inst(){
         return instance;
     }

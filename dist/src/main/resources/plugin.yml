@@ -1,0 +1,11 @@
+name: WeirdCutscene
+main: io.github.bindglam.weirdcutscene.WeirdCutsceneImpl
+version: 1.0
+api-version: 1.21
+softdepend:
+  - ProtocolLib
+  - ProtocolSupport
+  - ViaVersion
+  - ViaBackwards
+  - ViaRewind
+  - Geyser-Spigot

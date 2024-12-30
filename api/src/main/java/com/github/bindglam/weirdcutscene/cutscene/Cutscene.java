@@ -59,8 +59,7 @@ public class Cutscene {
     }
 
     // TODO : Optimize
-    public static Cutscene loadCutscene(File file) throws FileNotFoundException {
-        JSONObject cutsceneObj = JSON.parseObject(new BufferedReader(new FileReader(file)));
+    public static Cutscene loadCutscene(JSONObject cutsceneObj) {
         Cutscene cutscene = new Cutscene(cutsceneObj.getString("name"));
 
         for(JSONObject nodeObj : cutsceneObj.getList("nodes", JSONObject.class)){
