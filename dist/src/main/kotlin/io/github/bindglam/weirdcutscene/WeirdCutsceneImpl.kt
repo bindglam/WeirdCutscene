@@ -104,4 +104,8 @@ class WeirdCutsceneImpl : WeirdCutscene() {
             loadedCutscenes[cutsceneFile.nameWithoutExtension] = JSON.parseObject(BufferedReader(FileReader(cutsceneFile)))
         }
     }
+
+    override fun loadCutscene(name: String): Cutscene {
+        return Cutscene.loadCutscene(loadedCutscenes[name])
+    }
 }

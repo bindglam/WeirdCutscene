@@ -1,5 +1,6 @@
 package com.github.bindglam.weirdcutscene;
 
+import com.github.bindglam.weirdcutscene.cutscene.Cutscene;
 import com.github.bindglam.weirdcutscene.cutscene.node.NodeManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.ApiStatus;
@@ -11,6 +12,8 @@ public abstract class WeirdCutscene extends JavaPlugin {
     public abstract NodeManager getNodeManager();
 
     public abstract void reload();
+
+    public abstract Cutscene loadCutscene(@NotNull String name);
 
     public static @NotNull WeirdCutscene inst(){
         return instance;
