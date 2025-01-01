@@ -8,6 +8,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.util.EulerAngle;
 import org.bukkit.util.Vector;
@@ -40,6 +41,12 @@ public class EntityNode extends Node {
 
             if(entity == null) {
                 entity = world.spawnEntity(location, entityType);
+                if(entity instanceof LivingEntity livingEntity){
+                    livingEntity.setAI(false);
+                    livingEntity.setInvulnerable(true);
+                    livingEntity.setSilent(true);
+                    livingEntity.setNoPhysics(true);
+                }
 
                 for(Player other : Bukkit.getOnlinePlayers()){
                     if(Objects.equals(other.getUniqueId().toString(), player.getUniqueId().toString())) continue;

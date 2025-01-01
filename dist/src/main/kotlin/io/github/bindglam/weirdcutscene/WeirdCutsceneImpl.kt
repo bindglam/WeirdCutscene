@@ -7,6 +7,7 @@ import com.github.bindglam.weirdcutscene.cutscene.Cutscene
 import com.github.bindglam.weirdcutscene.cutscene.node.CameraNode
 import com.github.bindglam.weirdcutscene.cutscene.node.EntityNode
 import com.github.bindglam.weirdcutscene.cutscene.node.NodeManager
+import com.github.bindglam.weirdcutscene.cutscene.node.player.PlayerNode
 import com.github.retrooper.packetevents.PacketEvents
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIBukkitConfig
@@ -51,6 +52,7 @@ class WeirdCutsceneImpl : WeirdCutscene() {
 
         nodeManager.register(CameraNode::class.java)
         nodeManager.register(EntityNode::class.java)
+        nodeManager.register(PlayerNode::class.java)
 
         reload()
     }
